@@ -48,6 +48,8 @@ The purpose of the first release of the CausalML package was to make uplift mode
 
 ## Algorithms supported by CausalML
 
+The package currently supports many algorithms, but we will mention some of them:
+
 **Tree-based algorithms**:
 
 - [Uplift trees and random forests](https://stochasticsolutions.com/pdf/sig-based-up-trees.pdf) on KL divergence, Euclidean distance, and Chi-Square.
@@ -57,14 +59,40 @@ The purpose of the first release of the CausalML package was to make uplift mode
 **Meta-learner algorithms**:
 
 - S-learner: With only one machine learning model, S-learner can estimate the treatment effect.
-- T-Learner: T-Learner is a two-step process. In the first step, the control response function is estimated using data from the control group by a base learner, which can be any supervised learning or regression estimator. Second, the treatment response function is estimated.
-- X-Learner: X-Learner can be described in three stages: First, estimate the response functions using any supervised learning or regression algorithm and denote the estimated functions. Second, impute the user-level treatment effects. Third, define the CATE estimate by a weighted average.
-- R-learner: R-learner uses the out-of-fold estimates of outcomes and propensity scores from cross-validation.
-    Doubly robust (DR) learner: DR-learner estimates the CATE by cross-fitting a doubly robust score function in two stages.
-- TMLE learner: The Targeted Maximum Likelihood Estimation (TMLE) framework is used to estimate a statistical quantity of interest.
+- T-Learner: [T-Learner](https://arxiv.org/abs/1706.03461) is a two-step process. In the first step, the control response function is estimated using data from the control group by a base learner, which can be any supervised learning or regression estimator. Second, the treatment response function is estimated.
+- [X-Learner](https://arxiv.org/abs/1706.03461): X-Learner can be described in three stages: First, estimate the response functions using any supervised learning or regression algorithm and denote the estimated functions. Second, impute the user-level treatment effects. Third, define the CATE estimate by a weighted average.
+- R-learner: [R-learner](https://github.com/xnie/rlearner?utm_source=catalyzex.com) uses the out-of-fold estimates of outcomes and propensity scores from cross-validation.
+- Doubly robust (DR) learner: [DR-learner](https://www.math.mcgill.ca/dstephens/SISCR2018/Articles/bang_robins_2005.pdf) estimates the CATE by cross-fitting a doubly robust score function in two stages.
+- TMLE learner: The [Targeted Maximum Likelihood Estimation](https://www.khstats.com/blog/tmle/tutorial) (TMLE) framework is used to estimate a statistical quantity of interest.
 - TMLE supports the application of machine learning (ML) models with little assumptions about data distribution. Unlike ML estimates, the final TMLE estimate will still include appropriate standard errors for statistical inference.
 
-The package currently supports many algorithms, but we will mention some of them:
+You can look at the [documentation](https://causalml.readthedocs.io/en/latest/) for more information. Researchers designed the package to be versatile in terms of the types of outcome variables that can be modeled, supporting both regression and classification tasks. The package also includes algorithms for analyzing data from experiments with multiple treatment groups.
+
+## What problems can CausalML solve?
+
+CausalMLs use cases include, but are not limited to, targeting optimization, engagement personalization, and causal impact analysis.
+
+### Targeting Optimization
+
+- We can use CausalML to target promotions at people who will provide the most value.
+- In a cross-sell marketing campaign for current customers, we can provide promotions to customers who are more likely to use a new product, especially - because of the exposure to the promotions, while conserving inbox space for others.
+- Internal research has shown that using uplift modeling on only 30% of users could have the same effect on sales of a new product as offering the promotion to all customers.
+
+### Causal impact analysis
+
+- The comprehensive capabilities of CausalML allow us to analyze the effects of a specific event on experimental or observational data by incorporating rich features.
+- We can study the effect of a cross-sell on a customer’s future platform expenditures. Setting up a randomized test would be impractical because we don’t want to prevent any clients from making the switch to the new product.
+- With the help of CausalML, we can run some ML-based causal inference algorithms to figure out how the cross-sell affects the whole platform.
+
+### Personalization
+
+- To tailor the user experience, you can use CausalML. A business can communicate with its clients in many ways, such as through different product choices for upselling or messaging channels for communications.
+- Using CausalML, one can determine the ideal tailored offer for each client by estimating the effect of each possible combination.
+
+## Conclusion
+
+The Uber CausalML team is always working to improve and update the package. The team want to improve the computational efficiency of current algorithms in the package. They plan to include more cutting-edge uplift models. In addition to uplift modeling, they are investigating other modeling approaches at the confluence of machine learning and causal inference to resolve optimization problems.
+
 
 # Installation
 
