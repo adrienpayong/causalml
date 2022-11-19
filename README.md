@@ -9,6 +9,37 @@ The CausalML Python package offers state-of-the-art uplift modeling and [causal 
 
 But in many applications, it’s useful to have a finer-grained approximation of these effects. To estimate the effect at the individual or segment level, CausalML provides the user with the possibility to estimate the [conditional average treatment effect](https://arxiv.org/abs/2104.09935) (CATE). By giving each customer a treatment that fits their needs based on these predictions, a lot of optimization and personalization options open up.
 
+# What is uplift modeling?
+
+Uplift modeling is a powerfull modeling technique made possible by CausalML. Uplift modeling is a set of methods a business can use to predict the positive or negative impact of an action on a particular customer outcome.
+Customer relationship management, promotions, incentives, advertisements, customer service, recommendation systems, and even product design all make use of it to better target their customers and allocate their budgets.
+
+An optimal treatment strategy is provided after assessing the ITE or CATE of the treatment for a user or set of users, taking into account the potential lift by and cost of the treatment. After getting a promotional email, a manager at a telecommunications company can predict how many customers who fit a certain profile will renew their service in the next billing cycle.
+
+“Uplift modeling enables us to design a refined decision rule for optimally determining whether to treat each individual or not, depending on his or her features. Such a treatment rule allows us to only target those who positively respond to the treatment and avoid treating negative responders.”
+
+### Uplift modeling process
+
+    - Researchers will submit a random sample of the population to the action being analyzed (treatment dataset).
+    - Another disjointed, random sample is also selected, to which the action is not applied. This is the control dataset, which will be used as a baseline to see how well the action worked.
+    - Now that we have two sets of data to work with (treatment and control), we can create a model that predicts the difference between the two sets of data rather than the probability of objects belonging to a specific class.
+    
+    ## CausalML: Python package for causal machine learning
+    
+    Conducting a randomized experiment to draw causal inferences is not something that this package is meant to replace. Evaluation of the average treatment effect (ATE) for business decisions sometimes requires randomized experiments. Even though uplift modeling can be used with experimental and observational data, this particular implementation is best used with data from a randomized experiment.
+
+“Applications to observational data where the treatment is not assigned randomly should take extra caution. In a non-randomized experiment, there is often a selection bias in the treatment assignment (a.k.a. the confounding effect). One main challenge is that omitting potential confounding variables from the model can produce biased estimation for the treatment effect. On the other hand, properly randomized experiments
+do not suffer from such selection bias, that provides a better basis for uplift modeling to estimate the CATE (or individual level lift).”
+
+### Python packages for causalML
+
+There are a few packages related to CausalML:
+
+    - Uplift, grf, and rlearn packages are used to implement the uplift random forest, generalized random forest, and R-learner techniques.
+    - DoWhy Python module uses graphical models inspired by Judea Pearl’s do-calculus and the potential outcomes framework to provide a structured approach to the causal inference problem.
+    - EconML Python module was made so that machine learning techniques could be used with heterogeneous treatment effect estimators from econometrics(such as instrumental variables).
+    - Pylift implements one metalearner for uplift modeling. The current version of the CausalML package contributes by acting as a central hub for uplift modeling techniques.
+
 # Installation
 
 Installation with `conda` is recommended. `conda` environment files for Python 3.6, 3.7, 3.8 and 3.9 are available in the repository. To use models under the `inference.tf` module (e.g. `DragonNet`), additional dependency of `tensorflow` is required. For detailed instructions, see below.
