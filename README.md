@@ -40,6 +40,32 @@ There are a few packages related to CausalML:
  - [EconML](https://github.com/microsoft/EconML) Python module was made so that machine learning techniques could be used with heterogeneous treatment effect estimators from econometrics(such as instrumental variables).
  - [Pylift](https://pylift.readthedocs.io/en/latest/) implements one metalearner for uplift modeling. The current version of the CausalML package contributes by acting as a central hub for uplift modeling techniques.
 
+## Why CausalML
+
+Causal inference and machine learning have been a popular academic topics. The experience of researchers at Uber has led us to think that this study will produce real-world applications. Their goal with the CausalML package was to increase the number of people who could use these applications. The end objective of their work was to provide a unified environment for causal inference using machine learning.
+
+The purpose of the first release of the CausalML package was to make uplift modeling techniques more accessible to a large audience. To achieve this goal, they provide a uniform application programming interface (API) that enables running an uplift method as simple as fitting a standard classification or regression model. Several metrics and visualization tools, such as uplift curves, are provided for assessing the model’s performance.
+
+## Algorithms supported by CausalML
+
+**Tree-based algorithms**:
+
+- [Uplift trees and random forests](https://stochasticsolutions.com/pdf/sig-based-up-trees.pdf) on KL divergence, Euclidean distance, and Chi-Square.
+- [Uplift trees or random forests](https://arxiv.org/abs/1705.08492) based on contextual treatment selection.
+- [Causal Tree](https://github.com/susanathey/causalTree?utm_source=catalyzex.com) — WWork in Progress
+
+**Meta-learner algorithms**:
+
+- S-learner: With only one machine learning model, S-learner can estimate the treatment effect.
+- T-Learner: T-Learner is a two-step process. In the first step, the control response function is estimated using data from the control group by a base learner, which can be any supervised learning or regression estimator. Second, the treatment response function is estimated.
+- X-Learner: X-Learner can be described in three stages: First, estimate the response functions using any supervised learning or regression algorithm and denote the estimated functions. Second, impute the user-level treatment effects. Third, define the CATE estimate by a weighted average.
+- R-learner: R-learner uses the out-of-fold estimates of outcomes and propensity scores from cross-validation.
+    Doubly robust (DR) learner: DR-learner estimates the CATE by cross-fitting a doubly robust score function in two stages.
+- TMLE learner: The Targeted Maximum Likelihood Estimation (TMLE) framework is used to estimate a statistical quantity of interest.
+- TMLE supports the application of machine learning (ML) models with little assumptions about data distribution. Unlike ML estimates, the final TMLE estimate will still include appropriate standard errors for statistical inference.
+
+The package currently supports many algorithms, but we will mention some of them:
+
 # Installation
 
 Installation with `conda` is recommended. `conda` environment files for Python 3.6, 3.7, 3.8 and 3.9 are available in the repository. To use models under the `inference.tf` module (e.g. `DragonNet`), additional dependency of `tensorflow` is required. For detailed instructions, see below.
