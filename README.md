@@ -1,6 +1,6 @@
 # Review-CausalML: A Python Package for Causal Machine Learning
 
-Introduction
+## Introduction
 
 Causal Machine Learning (CausalML) is a Python library that implements causal inference techniques. In the past few years, people have become more interested in algorithms that combine causal inference and machine learning.
 This package gives you access to a number of Python-written methods. The goal is to bridge the gap between theoretical work on methodologies and real-world applications. This review provides an overview of the package’s key concepts and its application domains.
