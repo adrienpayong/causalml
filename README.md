@@ -1,50 +1,13 @@
-<div align="center">
-  <a href="https://github.com/uber/causalml"><img width="380px" height="140px" src="https://raw.githubusercontent.com/uber/causalml/master/docs/_static/img/logo/causalml_logo.png"></a>
-</div>
+# Review-CausalML: A Python Package for Causal Machine Learning
 
-------------------------------------------------------
+Introduction
 
-[![PyPI Version](https://badge.fury.io/py/causalml.svg)](https://pypi.org/project/causalml/)
-[![Build Status](https://github.com/uber/causalml/actions/workflows/python-test.yaml/badge.svg)](https://github.com/uber/causalml/actions/workflows/python-test.yaml)
-[![Documentation Status](https://readthedocs.org/projects/causalml/badge/?version=latest)](http://causalml.readthedocs.io/en/latest/?badge=latest)
-[![Downloads](https://pepy.tech/badge/causalml)](https://pepy.tech/project/causalml)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3015/badge)](https://bestpractices.coreinfrastructure.org/projects/3015)
+Causal Machine Learning (CausalML) is a Python library that implements causal inference techniques. In the past few years, people have become more interested in algorithms that combine causal inference and machine learning.
+This package gives you access to a number of Python-written methods. The goal is to bridge the gap between theoretical work on methodologies and real-world applications. This review provides an overview of the package’s key concepts and its application domains.
 
+The CausalML Python package offers state-of-the-art uplift modeling and [causal inference](https://en.wikipedia.org/wiki/Causal_inference) techniques using advanced machine learning algorithms. [The average treatment effect](https://en.wikipedia.org/wiki/Average_treatment_effect) (ATE) of a treatment or intervention can be estimated using conventional causal analysis techniques like a t-test on randomized trials (also known as A/B testing).
 
-# Disclaimer
-This project is stable and being incubated for long-term support. It may contain new experimental code, for which APIs are subject to change.
-
-# Causal ML: A Python Package for Uplift Modeling and Causal Inference with ML
-
-**Causal ML** is a Python package that provides a suite of uplift modeling and causal inference methods using machine learning algorithms based on recent
-research [[1]](#Literature). It provides a standard interface that allows user to estimate the Conditional Average Treatment Effect (CATE) or Individual Treatment
- Effect (ITE) from experimental or observational data. Essentially, it estimates the causal impact of intervention `T` on outcome `Y` for users
- with observed features `X`, without strong assumptions on the model form. Typical use cases include
-
-* **Campaign targeting optimization**: An important lever to increase ROI in an advertising campaign is to target the ad to the set of customers who will have a favorable response in a given KPI such as engagement or sales. CATE identifies these customers by estimating the effect of the KPI from ad exposure at the individual level from A/B experiment or historical observational data.
-
-* **Personalized engagement**: A company has multiple options to interact with its customers such as different product choices in up-sell or messaging channels for communications. One can use CATE to estimate the heterogeneous treatment effect for each customer and treatment option combination for an optimal personalized recommendation system.
-
-The package currently supports the following methods
-
-* **Tree-based algorithms**
-    * Uplift tree/random forests on KL divergence, Euclidean Distance, and Chi-Square [[2]](#Literature)
-    * Uplift tree/random forests on Contextual Treatment Selection [[3]](#Literature)
-    * Causal Tree [[4]](#Literature) - Work-in-progress
-* **Meta-learner algorithms**
-    * S-learner [[5]](#Literature)
-    * T-learner [[5]](#Literature)
-    * X-learner [[5]](#Literature)
-    * R-learner [[6]](#Literature)
-    * Doubly Robust (DR) learner [[7]](#Literature)
-    * TMLE learner [[8]](#Literature)
-* **Instrumental variables algorithms**
-    * 2-Stage Least Squares (2SLS)
-    * Doubly Robust (DR) IV [[9]](#Literature)
-* **Neural-network-based algorithms**
-    * CEVAE [[10]](#Literature)
-    * DragonNet [[11]](#Literature) - with `causalml[tf]` installation (see [Installation](#installation))
-
+But in many applications, it’s useful to have a finer-grained approximation of these effects. To estimate the effect at the individual or segment level, CausalML provides the user with the possibility to estimate the [conditional average treatment effect](https://arxiv.org/abs/2104.09935) (CATE). By giving each customer a treatment that fits their needs based on these predictions, a lot of optimization and personalization options open up.
 
 # Installation
 
