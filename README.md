@@ -40,7 +40,7 @@ There are a few packages related to CausalML:
  - [EconML](https://github.com/microsoft/EconML) Python module was made so that machine learning techniques could be used with heterogeneous treatment effect estimators from econometrics(such as instrumental variables).
  - [Pylift](https://pylift.readthedocs.io/en/latest/) implements one metalearner for uplift modeling. The current version of the CausalML package contributes by acting as a central hub for uplift modeling techniques.
 
-## Why CausalML
+## Why CausalML ?
 
 Causal inference and machine learning have been a popular academic topics. The experience of researchers at Uber has led us to think that this study will produce real-world applications. Their goal with the CausalML package was to increase the number of people who could use these applications. The end objective of their work was to provide a unified environment for causal inference using machine learning.
 
