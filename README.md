@@ -35,10 +35,10 @@ do not suffer from such selection bias, that provides a better basis for uplift 
 
 There are a few packages related to CausalML:
 
- - Uplift, grf, and rlearn packages are used to implement the uplift random forest, generalized random forest, and R-learner techniques.
- - DoWhy Python module uses graphical models inspired by Judea Pearl’s do-calculus and the potential outcomes framework to provide a structured approach to the causal inference problem.
- - EconML Python module was made so that machine learning techniques could be used with heterogeneous treatment effect estimators from econometrics(such as instrumental variables).
- - Pylift implements one metalearner for uplift modeling. The current version of the CausalML package contributes by acting as a central hub for uplift modeling techniques.
+ - Uplift, grf, and rlearn packages are used to implement the [uplift random forest](https://link.springer.com/article/10.1007/s10618-014-0383-9), [generalized random forest](https://grf-labs.github.io/grf/), and R-learner techniques.
+ - [DoWhy](https://github.com/py-why/dowhy) Python module uses graphical models inspired by Judea Pearl’s do-calculus and the potential outcomes framework to provide a structured approach to the causal inference problem.
+ - [EconML](https://github.com/microsoft/EconML) Python module was made so that machine learning techniques could be used with heterogeneous treatment effect estimators from econometrics(such as instrumental variables).
+ - [Pylift](https://pylift.readthedocs.io/en/latest/) implements one metalearner for uplift modeling. The current version of the CausalML package contributes by acting as a central hub for uplift modeling techniques.
 
 # Installation
 
